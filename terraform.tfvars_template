@@ -1,0 +1,26 @@
+#######################
+## variables for vpn-lab
+#######################
+tenancy_ocid="__tenancy_ocid__"
+
+user_ocid="__user_ocid__"
+
+fingerprint="__fingerprint__"
+
+private_key_path='__API_private_key_path__'
+
+### Region
+region="__3-characters_region_code__"
+#Currently cloud region must be Ashburn
+#region_cloud="__3-characters_region_code_to_to_host_cloud_environment__"
+region_cloud="iad"
+
+region_onprem="__3-characters_region_code_to_host_on-prem_environment__"
+
+###Compartment
+compartment_ocid="__compartment_id__"
+              
+### Public/private keys used on the instance
+ssh_private_key_path="__ssh_private_key_path__"
+ssh_public_key_path="__ssh_public_key_path__"
+
