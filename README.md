@@ -8,7 +8,7 @@ It creates a fully functional 2-tunnels IPSec VPN between OCI VPN Service (cloud
 
 ## Setup 
 
-Create env-vars file 
+Create terraform.tfvars file 
 
 ```shell
 cp terraform.tfvars_template terraform.tfvars
