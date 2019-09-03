@@ -1,20 +1,3 @@
-provider "oci" {
-  alias            = "cloud"
-  tenancy_ocid     = var.tenancy_ocid
-  user_ocid        = var.user_ocid
-  fingerprint      = var.fingerprint
-  private_key_path = var.private_key_path
-  region           = var.regions-map[var.region_cloud]
-}
-provider "oci" {
-  alias            = "onprem"
-  tenancy_ocid     = var.tenancy_ocid
-  user_ocid        = var.user_ocid
-  fingerprint      = var.fingerprint
-  private_key_path = var.private_key_path
-  region           = var.regions-map[var.region_onprem]
-}
-
 resource "oci_core_drg" "cloud-drg" {
   provider       = oci.cloud
   compartment_id = var.compartment_ocid
@@ -473,6 +456,7 @@ output "cloud-instance_ips" {
 }
 
 data "oci_core_ipsec_config" "cloud-ipsec-config" {
+  depends_on =  ["oci_core_ipsec.cloud-ipsec-connection"]
   ipsec_id = oci_core_ipsec.cloud-ipsec-connection.id
 }
 
